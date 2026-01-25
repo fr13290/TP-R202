@@ -10,13 +10,26 @@ Support pédagogique pour l'installation et la configuration d'Incus et LXConsol
 
 ```
 TP-R202/
-├── README.md                   # Ce fichier
-└── Docs Etud/                  # Documents de référence pour les étudiants
-    ├── Installation-LXConsole.md
-    ├── Glossaire commandes Incus.pdf
-    ├── Bash Glossaire commandes Linux cat fonct.pdf
-    └── Bash Op et caract spe.pdf
+├── README.md
+├── Docs Etud/                              # Documents de référence
+│   ├── Installation-LXConsole.md
+│   ├── Glossaire commandes Incus.pdf
+│   ├── Bash Glossaire commandes Linux cat fonct.pdf
+│   ├── Bash Op et caract spe.pdf
+│   └── Note config profil et cloud init v2.pdf
+├── TD/                                     # Travaux Dirigés
+│   └── TD Admin Sys et Virt v1.pdf
+├── TP/                                     # Travaux Pratiques
+│   └── TP Virt Incus v1.pdf
+└── scripts/                                # Scripts d'installation
 ```
+
+---
+
+## Travaux Pratiques et Dirigés
+
+- [TP Virt Incus v1.pdf](TP/TP%20Virt%20Incus%20v1.pdf) - TP Virtualisation avec Incus
+- [TD Admin Sys et Virt v1.pdf](TD/TD%20Admin%20Sys%20et%20Virt%20v1.pdf) - TD Administration Système et Virtualisation
 
 ---
 
@@ -31,6 +44,10 @@ TP-R202/
 - [Glossaire commandes Incus.pdf](Docs%20Etud/Glossaire%20commandes%20Incus.pdf) - Référence des commandes Incus
 - [Bash Glossaire commandes Linux.pdf](Docs%20Etud/Bash%20Glossaire%20commandes%20Linux%20cat%20fonct.pdf) - Commandes Linux par catégorie/fonction
 - [Bash Opérateurs et caractères spéciaux.pdf](Docs%20Etud/Bash%20Op%20et%20caract%20spe.pdf) - Syntaxe Bash
+
+### Configuration avancée
+
+- [Note config profil et cloud init v2.pdf](Docs%20Etud/Note%20config%20profil%20et%20cloud%20init%20v2.pdf) - Configuration des profils et cloud-init
 
 ---
 
@@ -81,5 +98,5 @@ incus list
 
 ---
 
-**Version** : 1.2
+**Version** : 1.3
 **Date** : Janvier 2026
