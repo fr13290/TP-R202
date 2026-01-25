@@ -10,34 +10,40 @@ Support pédagogique pour l'installation et la configuration d'Incus et LXConsol
 
 ```
 TP-R202/
-├── README.md                  # Ce fichier
-├── install-lxconsole.md       # Documentation installation LXConsole
-├── Docs Etud/                 # Documents de référence pour les étudiants
-│   ├── Installation-LXConsole.md
-│   ├── Glossaire commandes Incus.pdf
-│   ├── Bash Glossaire commandes Linux cat fonct.pdf
-│   └── Bash Op et caract spe.pdf
-└── scripts/
-    ├── README.md
-    └── install-lxconsole.sh   # Script d'installation automatique
+├── README.md                   # Ce fichier
+└── Docs Etud/                  # Documents de référence pour les étudiants
+    ├── Installation-LXConsole.md
+    ├── Glossaire commandes Incus.pdf
+    ├── Bash Glossaire commandes Linux cat fonct.pdf
+    └── Bash Op et caract spe.pdf
 ```
+
+---
+
+## Documentation
+
+### Guide d'installation
+
+- [Installation-LXConsole.md](Docs%20Etud/Installation-LXConsole.md) - Installation et configuration de LXConsole
+
+### Glossaires de référence
+
+- [Glossaire commandes Incus.pdf](Docs%20Etud/Glossaire%20commandes%20Incus.pdf) - Référence des commandes Incus
+- [Bash Glossaire commandes Linux.pdf](Docs%20Etud/Bash%20Glossaire%20commandes%20Linux%20cat%20fonct.pdf) - Commandes Linux par catégorie/fonction
+- [Bash Opérateurs et caractères spéciaux.pdf](Docs%20Etud/Bash%20Op%20et%20caract%20spe.pdf) - Syntaxe Bash
 
 ---
 
 ## Quick Start
 
-### Installation rapide
+### 1. Configuration d'Incus
 
 ```bash
-# Cloner le dépôt
-git clone https://github.com/fr13290/TP-R202.git
-cd TP-R202
-
-# Exécuter le script d'installation
-sudo bash scripts/install-lxconsole.sh
+# Activer l'écoute réseau de l'API Incus
+sudo incus config set core.https_address "[::]:8443"
 ```
 
-### Accès aux services
+### 2. Accès aux services
 
 | Service | URL |
 |---------|-----|
@@ -46,25 +52,10 @@ sudo bash scripts/install-lxconsole.sh
 
 ---
 
-## Documentation
-
-### Installation
-
-- [install-lxconsole.md](install-lxconsole.md) - Procédure complète d'installation de LXConsole sur Debian 13
-
-### Documents étudiants
-
-- [Installation-LXConsole.md](Docs%20Etud/Installation-LXConsole.md) - Guide pas à pas
-- [Glossaire commandes Incus.pdf](Docs%20Etud/Glossaire%20commandes%20Incus.pdf) - Référence des commandes Incus
-- [Bash Glossaire commandes Linux.pdf](Docs%20Etud/Bash%20Glossaire%20commandes%20Linux%20cat%20fonct.pdf) - Commandes Linux par catégorie
-- [Bash Opérateurs et caractères spéciaux.pdf](Docs%20Etud/Bash%20Op%20et%20caract%20spe.pdf) - Syntaxe Bash
-
----
-
 ## Prérequis
 
-- Debian 13 (Trixie)
-- Incus installé
+- Debian 13 (Trixie) ou Ubuntu 22.04+
+- Incus installé et fonctionnel
 - Accès root ou sudo
 
 ---
@@ -81,11 +72,14 @@ sudo journalctl -u lxconsole -f
 # Redémarrer LXConsole
 sudo systemctl restart lxconsole
 
+# Vérifier que Incus écoute sur le port 8443
+sudo ss -tlnp | grep 8443
+
 # Liste des conteneurs Incus
 incus list
 ```
 
 ---
 
-**Version** : 1.1
+**Version** : 1.2
 **Date** : Janvier 2026
